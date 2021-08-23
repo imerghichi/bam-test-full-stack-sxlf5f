@@ -27,14 +27,24 @@ function solutionExercice1(N) {
 }
 
 function solutionExercice2(L) {
-    var res = "EXERCICE 2"
-    //TAPE LE CODE DE L'EXERCICE 2 ICI!
-    return res
+    var len = L.length;
+    if (len === 0 || !L.includes(1)) return 1;
+    L.sort();
+    for (var i = 0; i < len; i++) {
+         if (L[i] > 0  && L[i+1] - L[i] > 1) return L[i] + 1;    
+    }
+    return L[len - 1] + 1;
 }
 function solutionExercice3(L) {
-    var res = "EXERCICE 3"
-    //TAPE LE CODE DE L'EXERCICE 3 ICI!
-    return res
+    const map = new Map();
+    for (const l of L) {
+      const key = l.toString()
+      if (!map.get(key)) map.set(key, 1);
+      else map.set(key, map.get(key) + 1);
+    }
+    for (const [key, value] of map) {
+      if (value < 2) return key;
+    }
 }
 
 helper.displayOnHtml(solutionExercice1(1000),'1')
