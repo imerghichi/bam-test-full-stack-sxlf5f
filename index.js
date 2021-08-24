@@ -2,7 +2,7 @@
 import './helpers/style.css';
 import * as helper from './helpers/helpers.js';
 
-// VOTRE NOM ET PRENOM ICI !
+// Imane Merghichi
 function isChaotic(N){
     var precedent_num = N%10;
     var clone_num = Math.floor(N / 10);
